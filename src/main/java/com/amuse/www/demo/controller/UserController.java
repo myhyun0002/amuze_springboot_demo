@@ -21,6 +21,7 @@ public class UserController {
 
     private final UserService userService;
 
+    // 회원가입
     @PostMapping("")
     public ResponseEntity<?> signUpNewUser(@RequestBody @Valid SignUpRequest signUpRequest, BindingResult bindingResult){
         if(bindingResult.hasErrors()) throw new ValidationException("회원가입 유효성 검사 실패.", bindingResult.getFieldErrors());
